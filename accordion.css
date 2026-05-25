@@ -1,0 +1,80 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #f5f0e8;
+  color: #1a1510;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 22px;
+  padding: 60px 60px;
+}
+
+.title {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  color: #1a1510;
+  text-align: center;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 560px;
+}
+
+details {
+  border: 2px solid #1a1510;
+  background: #fffdf7;
+  overflow: hidden;
+}
+
+summary {
+  padding: 14px 20px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1510;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+summary::-webkit-details-marker { display: none; }
+summary::before {
+  content: "+ ";
+  color: #e8410a;
+  font-weight: 800;
+}
+details[open] summary::before { content: "− "; }
+
+details p {
+  padding: 14px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #534839;
+  border-top: 2px solid #d8cfc0;
+}
+
+/* TYPE THE INTERPOLATE-SIZE + ::details-content CSS HERE */
+:root {
+  interpolate-size: allow-keywords;
+}
+details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size .35s ease, content-visibility .35s ease allow-discrete;
+}
+details[open]::details-content {
+  block-size: auto;
+}
+
+

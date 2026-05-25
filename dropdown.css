@@ -1,0 +1,86 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #f5f0e8;
+  color: #1a1510;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 22px;
+  padding: 60px 80px;
+}
+
+.title {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 40px;
+  color: #1a1510;
+  text-align: center;
+}
+
+.page-stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+}
+
+.menu-trigger {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 12px 26px;
+  background: #1a1510;
+  color: #f5f0e8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1510;
+  text-decoration: none;
+  border-bottom: 1px solid #d8cfc0;
+}
+
+.menu a:last-child { border-bottom: none; }
+
+/* TYPE THE ANCHOR-POSITIONING CSS HERE */
+.menu-trigger {
+  anchor-name: --trigger;
+}
+.menu {
+  position-anchor: --trigger;
+  position-area: bottom span-right;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #1a1510;
+  border-radius: 8px;
+  min-width: 200px;
+}
+@supports not (anchor-name: --x) {
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+}
+
+

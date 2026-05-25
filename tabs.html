@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tabs · radio + :has() demo</title>
+  <link rel="stylesheet" href="tabs.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1 class="title">Tabs · pure CSS</h1>
+
+    <div class="tabs">
+      <!-- TYPE THE TABS MARKUP -->
+      <input type="radio" name="t" id="t1" checked />
+      <label for="t1">Overview</label>
+      <input type="radio" name="t" id="t2" />
+      <label for="t2">Pricing</label>
+      <input type="radio" name="t" id="t3" />
+      <label for="t3">Reviews</label>
+      <div class="panel" data-panel="1"><p>Overview content.</p></div>
+      <div class="panel" data-panel="2"><p>Pricing content.</p></div>
+      <div class="panel" data-panel="3"><p>Reviews content.</p></div>
+
+    </div>
+
+  </main>
+</body>
+</html>

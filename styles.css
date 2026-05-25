@@ -1,0 +1,76 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #f5f0e8;
+  color: #1a1510;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.wrap {
+  display: grid;
+  gap: 32px;
+  place-items: center;
+  text-align: center;
+}
+
+.caption {
+  font-size: 22px;
+  color: #534839;
+  font-weight: 500;
+}
+
+.tip-row {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  padding-top: 60px;
+}
+
+.tip-trigger {
+  font-family: inherit;
+  font-size: 32px;
+  padding: 14px 18px;
+  background: #fffdf7;
+  color: #1a1510;
+  border: 3px solid #1a1510;
+  box-shadow: 6px 6px 0 #1a1510;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.tip {
+  position: absolute;
+  top: 0;
+  padding: 10px 18px;
+  background: #1a1510;
+  color: #fffdf7;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 4px 4px 0 #e8410a;
+}
+
+/* The hover/focus reveal + transition + @starting-style will be TYPED here */
+
+
+.tip {
+    opacity: 0;
+      visibility: hidden;
+        transform: translateY(8px);
+          transition: opacity 0.15s, transform 0.15s,
+                        visibility 0.15s allow-discrete;
+}
+
+.tip-trigger:hover ~ .tip,
+.tip-trigger:focus ~ .tip {
+    opacity: 1;
+      visibility: visible;
+        transform: translateY(0);
+}

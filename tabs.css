@@ -1,0 +1,85 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #f5f0e8;
+  color: #1a1510;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 22px;
+  padding: 60px 60px;
+}
+
+.title {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  color: #1a1510;
+  text-align: center;
+}
+
+.tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid #1a1510;
+  background: #fffdf7;
+}
+
+.tabs label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1510;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+.panel {
+  grid-column: 1 / -1;
+  padding: 28px 24px;
+  border-top: 2px solid #1a1510;
+  display: none;
+  font-size: 18px;
+  color: #1a1510;
+}
+
+/* TYPE THE :has() AND nth-child STYLING HERE */
+.tabs input[type="radio"] {
+  position: absolute;
+  clip-path: inset(50%);
+  opacity: 0;
+}
+.tabs:has(#t1:checked) .panel[data-panel="1"],
+.tabs:has(#t2:checked) .panel[data-panel="2"],
+.tabs:has(#t3:checked) .panel[data-panel="3"] {
+  display: block;
+}
+.tabs::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  height: 4px;
+  width: calc(100% / 3);
+  background: #e8410a;
+  transform: translateY(4px);
+  transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+}
+.tabs:has(#t1:checked)::before { transform: translate(0,    4px); }
+.tabs:has(#t2:checked)::before { transform: translate(100%, 4px); }
+.tabs:has(#t3:checked)::before { transform: translate(200%, 4px); }
+
+

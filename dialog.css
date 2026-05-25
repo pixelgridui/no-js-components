@@ -1,0 +1,82 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #f5f0e8;
+  color: #1a1510;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.title {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 56px;
+  color: #1a1510;
+}
+
+button {
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 14px 28px;
+  background: #1a1510;
+  color: #f5f0e8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+[popover] h2 {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+[popover] p {
+  font-size: 22px;
+  margin-bottom: 22px;
+  line-height: 1.4;
+}
+
+/* TYPE THE POPOVER CSS HERE */
+[popover]:popover-open {
+  inset: auto;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background: white;
+  color: #1a1510;
+  border: 1px solid;
+  padding: 2rem 2.4rem;
+  border-radius: 8px;
+  min-width: 360px;
+  text-align: center;
+}
+[popover]::backdrop {
+  background: rgb(0 0 0 / .4);
+}
+[popover]:popover-open {
+  opacity: 1;
+  transition: opacity .3s, transform .3s;
+  transition-behavior: allow-discrete;
+}
+@starting-style {
+  [popover]:popover-open {
+    opacity: 0;
+    transform: scale(.95);
+  }
+  [popover]:popover-open::backdrop {
+    opacity: 0;
+  }
+}
+
+

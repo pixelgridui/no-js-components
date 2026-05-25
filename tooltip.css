@@ -1,0 +1,73 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #f5f0e8;
+  color: #1a1510;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 22px;
+  padding: 60px 80px;
+}
+
+.title {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 40px;
+  color: #1a1510;
+  text-align: center;
+}
+
+.tip-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.tip-trigger {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 12px 26px;
+  background: #1a1510;
+  color: #f5f0e8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tip {
+  position: absolute;
+  bottom: calc(50% + 36px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1510;
+  color: #f5f0e8;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* TYPE THE SIBLING-COMBINATOR CSS HERE */
+.tip {
+  opacity: 0;
+  transition: opacity .2s;
+}
+.tip-trigger:hover ~ .tip {
+  opacity: 1;
+}
+.tip-trigger:focus ~ .tip {
+  opacity: 1;
+}
+
+
