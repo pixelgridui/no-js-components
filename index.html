@@ -2,19 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tooltip · shadcn rebuild demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>no-js-components · shadcn rebuilt with the platform</title>
+  <meta name="description" content="Five shadcn components rebuilt with native HTML and CSS — accordion, dialog, dropdown, tabs, tooltip. Companion code to the Pixel Grid UI long-form video." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="wrap">
-    <p class="caption">Hover the icon to see the tooltip.</p>
+  <main class="landing">
 
-    <div class="tip-row">
-      <button class="tip-trigger" aria-describedby="copy-tip">
-        <span aria-hidden="true">⧉</span>
-      </button>
-      <span id="copy-tip" class="tip" role="tooltip">Copy to clipboard</span>
-    </div>
+    <header class="lead">
+      <div class="eyebrow">PIXEL · GRID · UI</div>
+      <h1 class="hero">shadcn, rebuilt with the&nbsp;platform.</h1>
+      <p class="sub">
+        Five components. Native HTML and CSS only.
+        <strong>47 KB of JS</strong> swapped for <strong>4 KB of CSS</strong>.
+      </p>
+    </header>
+
+    <section class="grid">
+      <a class="card" href="accordion.html">
+        <div class="num">01</div>
+        <h2 class="name">Accordion</h2>
+        <p class="kicker">&lt;details&gt; + interpolate-size</p>
+        <p class="desc">
+          Native expand/collapse. Keyboard, focus, and ARIA grouping come free.
+          Smooth height animation via <code>interpolate-size: allow-keywords</code>.
+        </p>
+      </a>
+
+      <a class="card" href="dialog.html">
+        <div class="num">02</div>
+        <h2 class="name">Dialog</h2>
+        <p class="kicker">popover attribute + ::backdrop</p>
+        <p class="desc">
+          The browser handles focus trap, Escape-to-close, and backdrop.
+          Just <code>popover</code> on the element + <code>popovertarget</code> on the button.
+        </p>
+      </a>
+
+      <a class="card" href="dropdown.html">
+        <div class="num">03</div>
+        <h2 class="name">Dropdown</h2>
+        <p class="kicker">popover + anchor-positioning</p>
+        <p class="desc">
+          Menu anchors itself to the trigger with CSS <code>anchor()</code>.
+          One line of JS handles the outside-click edge case.
+        </p>
+      </a>
+
+      <a class="card" href="tabs.html">
+        <div class="num">04</div>
+        <h2 class="name">Tabs</h2>
+        <p class="kicker">radio inputs + :has()</p>
+        <p class="desc">
+          Radio inputs hold the selected state. <code>:has()</code> swaps the
+          visible panel. Keyboard arrow-key navigation is automatic.
+        </p>
+      </a>
+
+      <a class="card" href="tooltip.html">
+        <div class="num">05</div>
+        <h2 class="name">Tooltip</h2>
+        <p class="kicker">sibling-combinator + @starting-style</p>
+        <p class="desc">
+          Hover or focus the trigger, sibling tooltip fades in.
+          <code>@starting-style</code> + <code>transition-behavior: allow-discrete</code>
+          animate it from <code>display: none</code>.
+        </p>
+      </a>
+    </section>
+
+    <footer class="foot">
+      <p>
+        Companion code to the
+        <a class="link" href="https://www.youtube.com/@pixelgridui" target="_blank" rel="noopener">Pixel Grid UI</a>
+        long-form video on rebuilding shadcn/ui without JavaScript.
+      </p>
+      <p class="meta">
+        Each demo is a standalone <code>.html</code> + <code>.css</code> pair.
+        Open the files. Read every line. Nothing hidden.
+      </p>
+    </footer>
+
   </main>
 </body>
 </html>
